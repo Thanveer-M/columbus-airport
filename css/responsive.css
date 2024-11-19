@@ -662,7 +662,7 @@
 }
 @media (min-width: 768px) {
   .main_wrapper {
-    min-height: calc(100vh - 350px);
+    min-height: calc(100vh - 200px);
   }
   .for_mob {
     display: none;
@@ -1046,7 +1046,7 @@
   #top-header .nav_bottom .mega-menu-wrap .max-mega-menu > li > a {
     line-height: 50px !important;
     height: 50px !important;
-    color: #43546A !important;
+    color: #193D80 !important;
     font-size: 16px !important;
     background: #ffffff !important;
     padding-left: 20px !important;
@@ -1064,7 +1064,7 @@
   #top-header .nav_bottom .mega-menu-wrap .max-mega-menu > li > ul > li > a {
     width: 100% !important;
     background: #fff !important;
-    color: #43546A !important;
+    color: #193D80 !important;
     font-size: 16px !important;
     font-family: "Poppins", sans-serif !important;
     padding: 6px 0px 6px 0px !important;
@@ -1139,7 +1139,7 @@
   }
   #top-header #navbarResponsive .nav_bottom .head_drop .dropdown .btn {
     background: none;
-    color: #43546A;
+    color: #193D80;
     border: 0;
     padding: 13px 20px;
     font-size: 16px;
