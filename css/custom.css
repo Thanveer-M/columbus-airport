@@ -645,6 +645,7 @@ label.title {
   font-weight: 700;
   font-family: "Roboto", sans-serif;
   line-height: 24px;
+  text-transform: uppercase;
 }
 @media (min-width: 1200px) {
   .main_header .navbar-nav > li:hover .dropdown-menu,
