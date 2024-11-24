@@ -5,7 +5,7 @@
 @import "breakpoints";
 //componenets (button, anchor tags, heading tags etc)
 body {
-    color: $black;
+    color: $primary;
     font-size: 16px;
     @include popins;
 }
@@ -96,7 +96,9 @@ p {
     color: $black;
     font-family: $popins;
 }
-
+.color-primary{
+    color:$primary;
+}
 p.bold {
     font-weight: 700;
     color: $gray;
@@ -234,9 +236,9 @@ video {
 }
 
 .form-control {
-    min-height: 50px;
+    min-height: 40px;
     background-color: $white;
-    border: 1px solid $gray;
+    border: 1px solid $black;
     border-radius: 5px !important;
 }
 
@@ -256,7 +258,7 @@ select {
     background-repeat: no-repeat;
     -webkit-appearance: none;
     -moz-appearance: none;
-    background-position: top 20px right 12px;
+    background-position: top 15px right 12px;
     min-width: 130px;
     background-size: 16px;
     color: $black;
@@ -264,9 +266,9 @@ select {
     min-height: 50px;
     font-size: 14px;
     font-weight: 500;
-    color: $gray;
+    color: $black;
     &.form-control {
-        color: $gray;
+        color: $black;
         cursor: pointer;
         padding-right: 30px;
     }
@@ -662,6 +664,7 @@ label.title {
                 font-weight: 700;
                 font-family: $roboto;
                 line-height: 24px;
+                text-transform: uppercase;
             }
             @include xl {
                 &:hover {
@@ -944,10 +947,13 @@ label.title {
 
 //banner
 .main_banner {
-    margin-top: 90px;
+    margin-top: 120px;
     position: relative;
     padding-bottom: 90px;
     padding-top: 90px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
     &:before {
         content: '';
         position: absolute;
@@ -1075,6 +1081,16 @@ label.title {
         max-width: 650px;
         margin-bottom: 20px;
         opacity: 1;
+    }
+    &.inner_pages{
+        height: 195px;
+        padding-bottom: 40px;
+        padding-top: 40px;
+        h1{
+            margin-top: 20px;
+            margin-bottom: 28px;
+        }
+       
     }
 }
 
@@ -1610,10 +1626,10 @@ label.title {
 }
 
 .main_wrapper {
-    padding-top: 135px;
+    padding-top: 65px;
     a {}
     p {
-        margin-bottom: 20px;
+        margin-bottom: 16px;
     }
     li {}
     .wp-block-heading+.wp-block-advgb-table {
@@ -1717,6 +1733,7 @@ label.title {
     justify-content: center;
     text-align: center;
     position: relative;
+    margin-top: 56px;
     h1 {
         position: relative;
         z-index: 9;
@@ -1732,7 +1749,7 @@ label.title {
     max-width: 900px;
     margin-left: auto;
     margin-right: auto;
-    padding-bottom: 10px;
+    padding-bottom: 80px;
     padding-top: 30px !important;
     .document_era {
         .col-md-12 {
@@ -1741,8 +1758,8 @@ label.title {
         }
     }
     a{
-        margin-top: 8px;
-        margin-bottom: 8px;
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
     h2{
         margin-bottom: 16px;
@@ -1759,6 +1776,17 @@ label.title {
         font-size: 18px;
         font-family: $popins;
     }
+    li{
+        padding-top: 8px;
+        padding-bottom: 8px;
+    }
+    h5{
+        color: $primary;
+        line-height: 22.4px;
+    }
+    .doc_block{
+        margin-bottom: 0px;
+    }
 }
 
 .general_carousel {
@@ -1767,8 +1795,7 @@ label.title {
     .caption-carousel {
         padding-top: 15px;
         p {
-            color: $gray;
-            font-style: italic;
+            color: $primary;
         }
     }
     .carousel-control-next {
@@ -1814,12 +1841,12 @@ label.title {
 
 .doc_block {
     display: block;
-    color: $secondary;
+    color: $primary;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 700;
     margin-bottom: 10px;
-    @include popins;
-    text-decoration: underline;
+    @include montserrat;
+    
     img {
         margin-right: 8px;
         max-width: 24px;
@@ -1829,10 +1856,11 @@ label.title {
         margin-right: 10px;
     }
     &:hover {
-        color: $green;
+        color: $primary;
+        text-decoration: underline;
         @include underline;
         img {
-            @include img-green;
+            @include img-grey;
         }
     }
 }
@@ -1903,7 +1931,7 @@ label.title {
 //page builder image text cards
 .img_text_card_row {
     .img_text_card_col {
-        padding: 0px 6px;
+        padding: 0px 12px;
         margin-bottom: 15px;
         >a:hover {
             text-decoration: none;
@@ -1931,7 +1959,7 @@ label.title {
         }
     }
     .text-img-wrap {
-        background: $lightgray;
+        background: $lightblue;
         height: 100%;
         display: flex;
         flex-direction: column;
@@ -1940,8 +1968,18 @@ label.title {
         >a {
             display: flex;
             flex-direction: column;
-            /* height: 100%;*/
+            height: 100%;
             text-decoration: none !important;
+            justify-content: space-between;
+
+            &:hover{
+
+            }
+        }
+        h3{
+            font-size: 24px;
+            font-family: $montserrat;
+            line-height: normal;
         }
         .img_card_block {
             position: relative;
@@ -1953,31 +1991,51 @@ label.title {
             }
         }
         .text_card_block {
-            padding: 20px 25px;
+            padding: 16px 16px;
             height: auto;
             p {
                 margin-bottom: 10px;
+                color: $primary;
             }
         }
         a:hover {
             h3 {
-                text-decoration: underline;
+                text-decoration: none;
             }
-            .btn_learn {
-                color: #097F8E;
-                text-decoration: underline;
+            .btn_sm {
+                background: $white;
+                color: $primary;
+                text-decoration: none;
+                box-shadow: 0px 5px 4px 0px rgba(0, 0, 0, 0.25);
             }
         }
+        .cat_date_wraper{
+            display: flex;
+            align-items: center;
+            margin-bottom: 8px;
+        }
         .category {
-            font-weight: 700;
-            position: absolute;
-            background: $mint;
+            margin-bottom: 0px;
+            color: $primary;
+            font-family: $popins;
             font-size: 16px;
-            font-family: $roboto;
-            color: $gray;
-            bottom: 0px;
-            left: 0px;
-            padding: 5px 12px;
+            font-weight: 700;
+            line-height: 24px;
+            &::before{
+                content: "-";
+                width: 10px;
+                height: 10px;
+                margin-right: 8px;
+                margin-left: 8px;
+            }
+        }
+        .date{
+            margin-bottom: 0px;
+            color: $primary;
+            font-family: $popins;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 24px;
         }
         &.no-img {
             padding-top: 30px
@@ -1986,11 +2044,11 @@ label.title {
             h3 {}
         }
         &:hover a .text_card_block {
-            background: #CBCDBE;
-            .h3 {
-                text-decoration: underline;
-            }
+            // .h3 {
+            //     text-decoration: underline;
+            // }
         }
+
     }
     &.one {
         .text-img-wrap>a {
@@ -2011,6 +2069,9 @@ label.title {
         display: table;
         width: auto;
         bottom: 30px;
+    }
+    .read_btn_wraper{
+        padding: 16px 16px;
     }
 }
 
@@ -2049,7 +2110,7 @@ label.title {
             position: absolute;
             width: 100%;
             height: 100%;
-            background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
+            // background: linear-gradient(0deg, rgba(0, 0, 0, 0.30) 0%, rgba(0, 0, 0, 0.30) 100%);
         }
         &.no-img {
             min-height: 200px;
@@ -2116,7 +2177,7 @@ label.title {
         }
         &:hover {
             &::before {
-                background: linear-gradient(0deg, rgba(51, 125, 88, 0.90) 0%, rgba(51, 125, 88, 0.90) 100%);
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.50) 0%, rgba(0, 0, 0, 0.50) 100%);
             }
             .h3 {
                 text-decoration: underline;
@@ -2140,7 +2201,7 @@ label.title {
     padding-right: 10px;
     margin-bottom: 20px;
     a {
-        color: $black;
+        color: $white;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -2149,26 +2210,25 @@ label.title {
         -webkit-box-pack: center;
         -ms-flex-pack: center;
         justify-content: center;
-        min-height: 60px;
+        // min-height: 60px;
         -webkit-box-align: center;
         -ms-flex-align: center;
         align-items: center;
         font-size: 18px;
-        padding: 10px;
-        background: #CCBE9E;
+        padding: 16px 24px;
+        background: $primary;
         border-radius: 0px;
         font-weight: 600;
         height: 100%;
         position: relative;
         border: 0;
         transition: background-color 0.3s ease-in-out;
-        font-family: $popins;
+        font-family: $montserrat;
         text-decoration: none;
+        line-height: 22.4px;
         &:hover {
             color: #fff;
-            background-color: $green;
-            color: $white;
-            text-decoration: none;
+            text-decoration: underline;
             border: 0;
         }
     }
@@ -2227,6 +2287,9 @@ label.title {
         margin-bottom: 50px;
         position: relative;
     }
+    p{
+        color: $primary;
+    }
     .how_row {
         -ms-flex-wrap: nowrap;
         flex-wrap: nowrap;
@@ -2235,10 +2298,10 @@ label.title {
             margin-bottom: 0px;
         }
         .number {
-            width: 32px;
-            height: 32px;
-            min-width: 32px;
-            min-height: 32px;
+            width: 40px;
+            height: 40px;
+            min-width: 40px;
+            min-height: 40px;
             border-radius: 100px;
             display: -webkit-box;
             display: -ms-flexbox;
@@ -2251,13 +2314,14 @@ label.title {
             align-items: center;
             margin-right: 20px;
             color: $secondary;
-            font-weight: 600;
+            font-weight: 400;
             font-size: 18px;
-            border: 2px solid $secondary;
-            font-family: $popins;
+            border: 3px solid $secondary;
+            font-family: $montserrat;
         }
         .how_title {
-            color: $gray
+            color: $blue;
+            font-size: 16px;
         }
         p.how_title {
             margin-bottom: 5px;
@@ -2275,29 +2339,29 @@ label.title {
         justify-content: flex-end;
     }
     .cont_inner {
-        padding: 25px 20px;
-        min-height: 170px;
+        padding: 24px 16px;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
         span.h4 {
-            font-family: $roboto;
+            font-family: $popins;
             font-size: 16px;
             font-weight: normal;
             margin-bottom: 0px;
+            color: $primary;
         }
     }
     .contact_box {
-        box-shadow: 0px 1px 3px #00000029;
-        border: 1px solid #E8E9EA;
+        border: 1px solid $black;
         background: $white;
         height: 100%;
         p {
             margin-bottom: 5px;
         }
         h3 {
-            min-height: 35px;
+            font-size: 20px;
+            color: $primary;
         }
         .cont_img {
             img {
@@ -2316,14 +2380,14 @@ label.title {
         margin-top: 0;
         padding-top: 10px;
         strong {
-            color: $black;
+            color: $link;
         }
         a {
-            color: $secondary;
+            color: $link;
             font-weight: 700;
             &:hover {
                 text-decoration: underline;
-                color: $green;
+                color: $link;
             }
         }
         p {
@@ -2373,8 +2437,8 @@ label.title {
     }
     .owl-nav {
         button {
-            width: 42px;
-            height: 56px;
+            width: 52px;
+            height: 52px;
             background: none;
             display: flex;
             align-items: center;
@@ -2387,11 +2451,13 @@ label.title {
             background: none;
             padding: 0px;
             opacity: 1;
-            background: rgba(0, 0, 0, 0.6);
+            background: $white;
             img {}
             &:hover {
-                opacity: 0.82;
-                img {}
+                background: $primary;
+                img {
+                    @include img-white;
+                }
             }
         }
         .owl-next {
@@ -2442,20 +2508,31 @@ h2+.expand_img_grid {
         @include shadow;
         &:hover {
             h3 {
-                color: $green;
+                color: $white;
                 text-decoration: underline;
             }
         }
     }
     .expand_det {
         text-align: left;
-        padding: 15px;
+        padding: 8px 16px;
         padding-bottom: 20px;
-        /*  background: #fff;*/
+        background: $primary;
         p {
-            margin-bottom: 0px;
+            margin-bottom: 8px;
+            color: $white;
+            font-size: 18px;
+            font-family: $montserrat;
+            font-weight: 400;
+            text-align: center;
+            text-transform: uppercase;
         }
-        h3 {}
+        h3 {
+            color: $white;
+            font-weight: 400;
+            font-size: 20px;
+            text-align: center;
+        }
     }
     .links {
         display: block;
@@ -2484,9 +2561,9 @@ h2+.expand_img_grid {
                     content: "";
                     position: absolute;
                     width: 100%;
-                    height: 15px;
-                    bottom: -10px;
-                    background: $white;
+                    height: 20px;
+                    bottom: -15px;
+                    background: $primary;
                     z-index: 9;
                 }
             }
@@ -2511,9 +2588,16 @@ h2+.expand_img_grid {
         width: 100%;
         margin-top: -10px;
         box-shadow: none;
-        background: $white;
+        background: $primary;
         box-shadow: 0px 0px 3px #00000029;
         border: 1px solid #E8E9EA;
+        p{
+            color: $white;
+            text-align: center;
+        }
+        a{
+            color: $white;
+        }
     }
     .expanding-container.expanded,
     .expanding-grid .expanding-container:target {
@@ -2550,7 +2634,7 @@ h2+.expand_img_grid {
         }
     }
     .expand-content {
-        padding: 30px 30px;
+        padding: 48px 48px;
         margin: 0 auto;
         max-width: 900px;
     }
@@ -2560,11 +2644,16 @@ h2+.expand_img_grid {
         align-items: center;
         justify-content: center;
         margin-top: 5px;
-        width: 30px;
-        height: 30px;
+        width: 16px;
+        height: 16px;
         border-radius: 100px;
         margin-left: auto;
         margin-right: auto;
+        background-image: url("../img/plus.svg");
+        background-size: 18px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
         img {
             max-width: 22px;
         }
@@ -2825,10 +2914,10 @@ h2+.expand_img_grid {
 
 .acc__card {
     margin-bottom: 10px;
-    box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.15);
     border: 0;
     border-radius: 0px;
     background: $white;
+    border: solid 1px #000;
 }
 
 .acc__title {
@@ -2995,7 +3084,7 @@ h2+.expand_img_grid {
     padding-top: 20px;
     padding-bottom: 50px;
     .pagination {
-        padding-top: 0px;
+        margin-top: 24px;
     }
     .mt_row {
         padding-top: 20px;
@@ -3030,58 +3119,88 @@ h2+.expand_img_grid {
 }
 
 .evt_lst_row {
-    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.15);
     background: $white;
     margin-bottom: 15px !important;
     margin-top: 0px !important;
+        column-gap: 24px;
+    .evt_info_wraper {
+        display: flex;
+        column-gap: 10px;
+        p{
+            color: $black !important;
+        }
+    }
+    .evt_img img {
+        object-fit: cover;
+        width: 100%;
+    }
+    .img_evt_block{
+        height: 164px;
+        width: 248px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
     .category {
         font-weight: 700;
-        background: #BDDCC8;
         font-size: 16px;
-        font-family: "popins", sans-serif;
-        color: #4D4D50;
-        padding: 5px 12px;
+        font-family: $montserrat;
+        color: $primary;
+        padding: 0px 0px;
         display: inline-block;
+        margin-bottom: 4px !important;
     }
     .text_evt_block {
-        padding: 15px;
+        padding: 16px;
         display: grid;
-        grid-template-columns: 40px auto;
-        grid-column-gap: 15px;
+        grid-template-columns: 40px auto auto;
+        grid-column-gap: 24px;
+        &.no_img{
+            grid-template-columns: 40px auto;
+        }
         .evt-date {
             font-size: 16px;
             font-weight: normal;
             text-align: center;
-            color: $gray;
+            color: $primary;
             text-transform: uppercase;
             width: auto !important;
             min-width: 10px !important;
             span {
-                font-size: 34px;
-                color: $secondary;
+                font-size: 30px;
+                color: $primary;
                 font-weight: 700;
-                font-family: $popins;
-                line-height: 40px;
+                font-family: $montserrat;
+                line-height: 36px;
             }
         }
         .canel-info {
-            color: #B61717;
+            color: #9E1616;
             text-transform: uppercase;
             font-family: "popins", sans-serif;
             font-weight: 400;
             position: relative;
+            &::before{
+                content: "•";
+                width: 5px;
+                height: 5px;
+                margin-right: 10px;
+
+            }
         }
         p {
-            color: $gray
+            color: $primary;
+            margin-bottom: 8px;
         }
-        h3 {
-            margin-bottom: 0px;
+        h6 {
+            margin-bottom: 8px;
             a {
                 text-decoration: none;
                 font-weight: 700;
-                font-size: 22px;
+                font-size: 24px;
                 color: $secondary !important;
-                font-family: $popins;
+                font-family: $montserrat;
                 border: 0 !important;
             }
             &:hover {
@@ -3095,19 +3214,26 @@ h2+.expand_img_grid {
 
 //Event Detil page
 .event-detail {
-    padding-top: 50px;
+    padding-top: 0px;
     padding-bottom: 50px;
     h1 {
-        font-size: 34px;
-        margin-bottom: 25px;
+        font-size: 30px;
+        margin-bottom: 16px;
+        color: $primary;
     }
     .category {
         font-weight: 700;
-        color: $gray;
-        margin-bottom: 15px;
+        color: $primary;
+        margin-bottom: 16px;
+        font-family: $montserrat;
+    }
+    .date{
+        margin-top: 16px;
+        margin-bottom: 16px;
+        line-height: 28px;
     }
     .canel-info {
-        color: #B61717;
+        color: #9E1616;
         text-transform: uppercase;
         font-family: "popins", sans-serif;
         font-weight: 400;
@@ -3118,12 +3244,16 @@ h2+.expand_img_grid {
         strong {
             padding-bottom: 5px;
         }
+        a{
+            color: $black;
+            font-weight: 400;
+        }
     }
     .document_era {
         padding-top: 10px;
         padding-bottom: 10px;
         a {
-            margin-bottom: 15px;
+            margin-bottom: 16px;
         }
     }
     .org_info {
@@ -3143,18 +3273,44 @@ h2+.expand_img_grid {
             display: block;
         }
     }
+    a.back_btn {
+        display: flex;
+        align-items: end;
+        column-gap: 8px;
+        margin-bottom: 16px;
+    }
+    .evt_lst_row .text_evt_block .evt-date span{
+        font-size: 55px;
+    }
+    .evt-date{
+        display: flex;
+        flex-direction: column;
+        row-gap: 10px;
+        
+    }
 }
 
 .related_events {
     padding-top: 60px;
     .evt_row {
-        margin-left: -5px;
-        margin-right: -5px;
+        margin-left: -12px;
+        margin-right: -12px;
     }
     .evt_col {
-        padding-left: 5px;
-        padding-right: 5px;
+        padding-left: 12px;
+        padding-right: 12px;
         margin-bottom: 10px;
+    }
+    .evt_lst_row .text_evt_block{
+        column-gap: 16px;
+        background: $lightblue;
+        grid-template-columns: 60px auto;
+    }
+    .evt_lst_row .text_evt_block .canel-info::before{
+        display: none;
+    }
+    .content-area h3{
+        font-size: 24px;
     }
 }
 
@@ -3618,17 +3774,17 @@ h2+.expand_img_grid {
     padding-top: 8px;
     a {
         font-size: 16px;
-        font-weight: 800;
+        font-weight: 700;
         &:hover {
             svg {
                 path {
-                    fill: $green;
+                    fill: $primary;
                 }
             }
         }
     }
     svg {
-        margin-right: 10px;
+        margin-right: 8px;
         vertical-align: bottom;
     }
 }
@@ -3786,17 +3942,38 @@ h2+.expand_img_grid {
 //News Details
 .news_detail {
     padding-bottom: 50px;
-    padding-top: 30px;
+    padding-top: 0px;
     .container {
         max-width: 900px;
     }
     .category,
     .date {
-        font-size: 16px;
-        font-weight: 700;
-        color: $gray;
-        margin-bottom: 10px;
+        font-size: 18px;
+        font-weight: 400;
+        color: $primary;
+        margin-bottom: 24px;
         text-transform: capitalize;
+    }
+    p{
+        color: $primary;
+    }
+    ul{
+        margin-bottom: 24px;
+        margin-left: 24px;
+        li{
+            margin-top: 8px;
+            margin-bottom: 8px;
+        }
+    }
+    h5{
+        margin-top: 8px;
+        margin-bottom: 8px;
+        color: $primary;
+        font-family: $montserrat;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: 22.4px;
     }
     .document_era {
         padding-top: 15px;
@@ -3810,28 +3987,33 @@ h2+.expand_img_grid {
         flex-direction: column;
     }
     .media-social {
+        display: flex;
+        align-items: center;
         span {
-            font-size: 21px;
+            font-size: 16px;
+            font-family: $montserrat;
             font-weight: 700;
             color: #1C2F5E;
             display: block;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
         }
         ul {
             display: flex;
             align-items: center;
             list-style: none;
             padding: 0px;
+            margin-bottom: 0px;
+            margin-left: 8px;
             li {
                 margin-right: 8px;
                 a {
                     width: 35px;
                     height: 35px;
-                    background: $primary;
+                    background: transparent;
                     @include all;
                     border-radius: 100px;
                     &:hover {
-                        background: $green;
+                        @include img-grey;
                     }
                 }
             }
@@ -3878,6 +4060,9 @@ h2+.expand_img_grid {
             }
         }
     }
+}
+.news_dtl_img {
+    margin-bottom: 24px;
 }
 
 //Procurment
@@ -4173,7 +4358,7 @@ section.alignright {
     .img_text_card_row,
     .simple_list_info,
     .contactcard_row {
-        max-width: 1210px;
+        max-width: 1200px;
     }
     .wp-block-media-text,
     .wp-block-table {
@@ -6880,5 +7065,28 @@ div.asp_r.asp_r_1.vertical {
     img{
         padding-left: 25px;
         height: 100%;
+    }
+}
+// user pages
+.user_access_page,
+.error_pages{
+    background: $cream;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 0px;
+}
+
+.user_access_wraper {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    h2{
+        margin-bottom: 16px;
+        line-height: 36px;
+    }
+    p{
+        margin-bottom: 16px;
+        color: $primary;
     }
 }
