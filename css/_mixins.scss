@@ -62,6 +62,9 @@
 @mixin img-white {
     filter: brightness(0) invert(1);
 }
+@mixin img-primary{
+    filter: brightness(0) saturate(100%) invert(18%) sepia(20%) saturate(5283%) hue-rotate(202deg) brightness(93%) contrast(94%);
+}
 
 @mixin all {
     display: -webkit-box;

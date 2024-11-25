@@ -273,11 +273,6 @@
         max-width: 100%;
         margin-left: 0;
     }
-    .howto {
-        .container {
-            padding: 0px;
-        }
-    }
     .wp-embed-responsive .wp-has-aspect-ratio .wp-block-embed__wrapper::before {
         display: none !important;
     }
@@ -395,7 +390,7 @@
     }
     .footer {
         &::before {
-            display: none;
+            
         }
         .container {
             padding: 0px;
@@ -421,7 +416,7 @@
         }
     }
     .NewsMettings {
-        padding-top: 10px;
+        padding: 64px 16px;
     }
     .back_next_posts .next_link {
         position: static;
@@ -603,6 +598,27 @@
     .main_search_content .search_input {
         width: 100%;
     }
+    .vertical_border::after {
+        width: 25px;
+        height: 312px;
+    }
+    .custom_media_img img{
+        height: 312px;
+        object-fit: cover;
+    }
+    .custom_media_section {
+        padding: 64px 16px;
+    }
+    .vertical_border{
+        height: auto;
+    }
+    .row.custom_media_row {
+        row-gap: 24px;
+    }
+    .footer-content .footer-row{
+        flex-direction: column;
+        row-gap: 16px;
+    }
 }
 
 @media (min-width:700px) and (max-width:992px) {
@@ -776,6 +792,10 @@
     .news-dt-content {
         padding-top: 20px;
     }
+    .generic_middle_block{
+        padding-left: 16px;
+        padding-right: 16px;
+    }
 }
 
 @media (max-width:1199.9px) {
@@ -809,12 +829,16 @@
     .main_header .navbar-brand img {
         max-width: 110px;
     }
-    .logo_wrap {
-        padding-left: 10px;
+    .main_header .logo_wrap {
+        padding-left: 30px;
+        left: 16px;
+        max-width: 220px;
+        height: 84.5px;
     }
     .main_banner {
         padding-top: 58px;
         flex-direction: column;
+        margin-top: 85px;
     }
     .soc_nav_wrap {
         background: $lightgray;
@@ -831,15 +855,19 @@
         flex-direction: column;
     }
     .main_header .navbar {
-        padding: 3px 0px;
+        padding: 0px 0px;
     }
     .toggle_main {
         margin-top: -8px;
     }
+    .main_header .navbar_wraper {
+        height: 85px;
+        background: $primary;
+    }
     .navbar-toggler {
         margin-right: 10px;
         border-radius: 0px;
-        height: 60px;
+        height: 100%;
         width: 60px;
         display: flex;
         align-items: center;
@@ -847,12 +875,13 @@
         flex-direction: column;
         justify-content: center;
         outline: 0 !important;
-        margin-top: 10px;
+        margin-top: 0px;
+        margin-left: auto;
     }
     .navbar-toggler .icon-bar {
         width: 27px;
         height: 3px;
-        background: #337D58;
+        background: #fff;
         display: block;
         margin-bottom: 5px;
         border-radius: 100px;
@@ -882,17 +911,23 @@
             padding: 0px 0px;
             margin: 0px;
             border-bottom: 1px solid #DCE0E6;
-            margin-bottom: 10px;
+            margin-bottom: 0px;
             position: relative !important;
             >a {
                 justify-content: flex-start;
-                padding: 10px 0px 10px 0px !important;
+                padding: 10px 20px 10px 20px !important;
                 font-size: 16px;
                 font-weight: 700;
-                color: #0C0D0F !important;
+                color: $link !important;
                 text-transform: none;
                 background: none !important;
                 text-align: left;
+            }
+            &:hover{
+                a{  
+                    color: $link !important;
+                    text-decoration: underline;
+                }
             }
         }
         .navbar-nav>li.current_page_ancestor>a,
@@ -908,13 +943,14 @@
             flex-direction: column;
         }
         .top_header_cont {
-            padding-top: 0px;
+            padding-top: 10px;
             order: 2;
             width: 100%;
         }
         .nav_bottom {
             margin-top: 0px;
             background: rgba(256, 256, 256, 0.98);
+            padding-right: 0px;
         }
         .select_language {
             padding-left: 20px;
@@ -950,6 +986,8 @@
         .navbar-nav {
             margin-top: 0px;
             width: 100%;
+            padding-top: 0px !important;
+            padding-bottom: 0px !important;
             .mega-dropdown-menu {
                 background: none;
                 position: static;
@@ -1251,6 +1289,20 @@
                 }
             }
         }
+    }
+    .calendar_home_wraper .calendar_section_main{
+        flex-direction: column;
+    }
+    .calendar_home_wraper .calendar_section_left{
+        width: 100%;
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
+    .calendar_home_wraper .calendar_section_right{
+        width: 100%;
+        padding: 64px 16px 64px 16px;
     }
 }
 
